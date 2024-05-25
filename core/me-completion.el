@@ -257,14 +257,6 @@ This depends on `+cape-hosts' and `+cape-global-capes'."
 (use-package vertico
   :straight (:files (:defaults "extensions/*.el"))
   :hook (minemacs-after-startup . vertico-mode)
-  ;; In the minibuffer, "C-k" is be mapped to act like "<up>". However, in
-  ;; Emacs, "C-k" have a special meaning of `kill-line'. So lets map "C-S-k"
-  ;; to serve the original "C-k".
-  :bind (:map vertico-map
-         ("C-j" . vertico-next)
-         ("C-k" . vertico-previous)
-         :map minibuffer-local-map
-         ("C-S-k" . kill-line))
   :custom
   (vertico-cycle t)
   (vertico-resize nil)
